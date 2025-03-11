@@ -1,0 +1,14 @@
+/* styles.css */
+body {
+    background-color: rebeccapurple;
+  }
+
+#content {
+  max-width: 500px;
+  height: auto;
+}
+  
+
+.home-page-img {
+  max-width: 100%;
+}
