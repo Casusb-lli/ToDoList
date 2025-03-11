@@ -2,3 +2,45 @@
 body {
     background-color: rebeccapurple;
   }
+
+#todoListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.item-container {
+  border: 1px solid black;
+  padding: 12px;
+}
+
+.item-prio-1 {
+  background-color: orange;
+}
+
+.item-prio-2 {
+  background-color: yellow;
+}
+
+.item-prio-3 {
+  background-color: green;
+}
+
+.hidden-checkbox {
+  display: none;
+}
+
+.checkbox-visual {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+.checked {
+  border: 1px solid blue;
+}
+
+.check-icon {
+  height: 100%;
+}
+
