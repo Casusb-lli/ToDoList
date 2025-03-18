@@ -8,6 +8,7 @@ import { addItem } from './addItem';
 const addItemButton = document.getElementById('addItemButton');
 
 
+
 addItemButton.addEventListener('click', () => {
     addItem();
 });

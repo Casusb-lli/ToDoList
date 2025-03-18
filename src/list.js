@@ -1,20 +1,21 @@
 import checkIconSrc from '../media/checkIcon.svg';
 
-class listItem {
-    constructor(title, description, dueDate, prio, project) {
+export class listItem {
+    constructor(title, description, dueDate, prio, project, assignee) {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.prio = prio;
         this.project = project;
+        this.assignee = assignee;
     }
 }
 
-const todoItems = [
-    new listItem('Clean', 'Take out trash, vaccum clean, make the bed', '2025-03-11', '3', 'Chores'),
-    new listItem('Call mom', 'Celebrate her on her birthday!', '2025-03-12', '1', 'Private'),
-    new listItem('Buy groceries', 'Buy breakfast, food storage', '2025-03-10', '2', 'Chores'),
-    new listItem('Leave car on service', 'At Perrys', '2025-03-15', '1', 'Other'),
+export const todoItems = [
+    new listItem('Clean', 'Take out trash, vaccum clean, make the bed', '2025-03-11', 'Low', 'Chores', 'Moa'),
+    new listItem('Call mom', 'Celebrate her on her birthday!', '2025-03-12', 'High', 'Private', 'Andreas'),
+    new listItem('Buy groceries', 'Buy breakfast, food storage', '2025-03-10', 'Medium', 'Chores', 'Andreas'),
+    new listItem('Leave car on service', 'At Perrys', '2025-03-15', 'High', 'Other', 'Moa'),
 ];
 
 

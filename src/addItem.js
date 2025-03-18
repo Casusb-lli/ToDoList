@@ -1,3 +1,6 @@
+import { listItem } from "./list"; 
+import { todoItems } from "./list";
+
 export function addItem () {
     const addItemFormContainer = document.getElementById('addItemFormContainer');
     const today = new Date(); //get todays date
@@ -30,9 +33,9 @@ export function addItem () {
     prioInput.setAttribute('id', 'prio');
     prioInput.setAttribute('name', 'prio');
     const prioOptions = [
-        { value: '1', text: 'Prio 1' },
-        { value: '2', text: 'Prio 2' },
-        { value: '3', text: 'Prio 3' }
+        { value: 'High', text: 'High' },
+        { value: 'Medium', text: 'Medium' },
+        { value: 'Low', text: 'Low' }
     ];
     prioOptions.forEach(optionData => {
         const prioOption = document.createElement('option');
@@ -52,7 +55,18 @@ export function addItem () {
     dateInput.setAttribute('value', today);
 
     //Create project picker
-    const addProject = document.createElement('');
+    const uniqueProjects = [...new Set(todoItems.map(item => item.project))];
+
+    const addProject = document.createElement('div');
+    const projectLabel = document.createElement('label');
+    projectLabel.setAttribute('for', 'project');
+    const projectInput = document.createElement('select');
+    uniqueProjects.forEach(project => {
+        const projectOption = document.createElement('option');
+        projectOption.textContent = project;
+        projectOption.value = project;
+        projectInput.appendChild(projectOption);
+    });
 
     //Append elements
     addItemFormContainer.appendChild(addTitle);
@@ -67,4 +81,7 @@ export function addItem () {
     addItemFormContainer.appendChild(addDate);
     addDate.appendChild(dateLabel);
     addDate.appendChild(dateInput);
+    addItemFormContainer.appendChild(addProject);
+    addProject.appendChild(projectLabel);
+    addProject.appendChild(projectInput);
 }
