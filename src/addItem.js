@@ -3,6 +3,7 @@ import { todoItems } from "./list";
 
 export function addItem () {
     const addItemFormContainer = document.getElementById('addItemFormContainer');
+    const listContainer = document.getElementById('listContainer');
     const today = new Date(); //get todays date
 
     //Create title input
