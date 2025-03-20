@@ -20,6 +20,7 @@ export function displayList () {
     const listContainer = document.getElementById('listContainer');
     const doneContainer = document.getElementById('doneContainer');
     const today = new Date(); //get todays date
+    listContainer.innerHTML = '';
     
     todoItems.forEach(item => {
         //Item containers
@@ -102,6 +103,7 @@ export function displayList () {
             checkbox.checked = !checkbox.checked;
             itemContainer.classList.toggle('checked', checkbox.checked);
             checkboxVisual.classList.add('checkbox-visuals-checked');
+            
             if (checkbox.checked) {
                 checkIcon.style.display = 'block';
                 doneContainer.appendChild(itemContainer);
@@ -110,7 +112,19 @@ export function displayList () {
                checkIcon.style.display = 'none';
                listContainer.appendChild(itemContainer);
             }
+            saveCheckedItems();
         });
     });
 }
+
+function saveCheckedItems () {
+    const checkedItems = Array.from(doneContainer.children).map(item => item.dataset.title);
+    localStorage.setItem('checkedItems', JSON.stringify(checkedItems));
+}
+
+export function loadCheckedItems () {
+    const checkedItems = JSON.parse(localStorage.getItem('checkedItems')) || [];
+
+
+    }
 

@@ -3,15 +3,19 @@ import './styles.css';  // Import your CSS file
 
 import { displayList } from "./list";
 
-import { addItem } from './addItem';
+import { createAddItemModal } from './createAddItemModal';
 
+import { loadSavedItems } from './createAddItemModal';
 
-displayList();
+document.addEventListener('DOMContentLoaded', loadSavedItems);
+
+//displayList();
 
 
 const addItemButton = document.getElementById('addItemButton');
 
 addItemButton.addEventListener('click', () => {
-    addItem();
+    createAddItemModal();
 });
+
 
